@@ -5,7 +5,7 @@ export async function fetchCars(){
     const options = {
       method: 'GET',
       url: 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars',
-      params: {model: 'corolla'},
+      params: {model: 'carrera'},
       headers: {
         'X-RapidAPI-Key': '7bb610be56msh8901a77c80fcb1ap17f13ajsncb3b72b0b097',
         'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'

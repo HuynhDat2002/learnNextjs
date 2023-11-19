@@ -1,5 +1,3 @@
-import { CarDetails } from '.';
-
 import { MouseEventHandler } from "react";
 
 export interface CustomButtonProps{
@@ -38,6 +36,6 @@ export interface CarCardProps{
 
 export interface CarDetailsProps{
     isOpen:boolean;
-    clodeModal:()=>void;
+    closeModal:()=>void;
     car:CarProps
 }
