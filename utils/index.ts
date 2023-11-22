@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { CarProps } from '@/types';
 
 export async function fetchCars(){
 
@@ -33,4 +34,5 @@ export const calculateCarRent = (year: number, cityMpg: number):number=>{
     const rentalRatePerDay=basePricePerDay+mileageFactor+ageRate;
     return Math.round(rentalRatePerDay);
 }
-   
+  
+

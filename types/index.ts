@@ -39,3 +39,7 @@ export interface CarDetailsProps{
     closeModal:()=>void;
     car:CarProps
 }
+
+export interface SearchButtonProps{
+    otherClasses:string
+}
