@@ -1,14 +1,13 @@
 
 import Image from 'next/image'
-import { Hero } from '@/components'
-import { Navbar, Footer, SearchBar, CustomFilter,CarCard } from '@/components'
+import { Hero,ShowMore ,Navbar, Footer, SearchBar, CustomFilter,CarCard } from '@/components'
 import { fetchCars } from '@/utils';
 import { fuels, manufacturers,yearsOfProduction } from '@/constants';
 
 export default async function Home({searchParams}) {
   const allCars = await fetchCars({
     manufacturer:searchParams.manufacturer||'audi',
-    year:searchParams.year || 2023,
+    year:searchParams.year || 2020,
     fuel:searchParams.fuel || '',
     limit:searchParams.limit || 10,
     model:searchParams.model||''
@@ -40,8 +39,11 @@ export default async function Home({searchParams}) {
                 <CarCard car={car} key={car}/>
               ))}
             </div>
+            <ShowMore 
+              pageNumber={(searchParams.limit||10)/10}
+              isNext={(searchParams.limit||10)>allCars.length}
+            />
           </section>
-
         ) : (
           <div className="home__error-container">
             <h2 className="text-black text-xl font-bold">Oops! no results</h2>
